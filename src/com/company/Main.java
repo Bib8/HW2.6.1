@@ -10,16 +10,16 @@ public class Main {
         String testText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, temporibus!" +
                 " consectetur adipisicing elit. Consequuntur, temporibus!" +
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur,";
-
+        List<String> someText = new ArrayList(List.of("Lorem", "ipsum", "dolor", "dolor", "consectetur", "Consequuntur"));
 
         ArraySortService sortService = new ArraySortService();
         sortService.oddSort(nums);
         System.out.println("----------------=====================---------------");
         sortService.sortOddOnly(nums2);
         System.out.println("----------------=====================---------------");
-        sortService.sortUniqOnly(testText);
+        sortService.sortUniqOnly(someText);
         System.out.println("----------------=====================---------------");
-        sortService.dublicateCount(testText);
+        sortService.dublicateCount(someText);
 
 
     }

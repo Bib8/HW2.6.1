@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 public class ArraySortService {
 
@@ -17,31 +17,28 @@ public class ArraySortService {
     }
 
     public void sortOddOnly(List<Integer> anyType){
-            ArrayList<Integer> buff;
-            anyType.sort(Integer :: compareTo);
-            buff = (ArrayList<Integer>) anyType.stream().distinct().collect(Collectors.toList());
-            oddSort(buff);
+         Set<Integer> sortOddOnlyArray = new TreeSet<>(anyType);
+         for(int num: sortOddOnlyArray) {
+             if (num % 2 == 0){
+                 System.out.println(num);
+             }
+         }
+
    }
 
-    public void sortUniqOnly(String someText){
-        ArrayList<String> buff = new ArrayList<>(Arrays.asList(someText.split(" ")));
-        buff.sort(String :: compareTo);
-        buff = (ArrayList<String>) buff.stream().distinct().collect(Collectors.toList());
-        System.out.println(buff);
+    public void sortUniqOnly(List<String> someText){
+        Set<String> uniqSorted = new HashSet<>(someText);
+        System.out.println(uniqSorted);
     }
 
-    public void dublicateCount(String someText){
-        int count = 0;
-        ArrayList<String> buff = new ArrayList<>(Arrays.asList(someText.split(" ", ',')));
-        System.out.println(buff);
-        for (int i = 0; i < buff.size(); i++) {
-            if (!buff.contains(buff.get(i))){
-                buff.remove(buff.get(i));
-                count++;
-            }
-        }
 
 
-        System.out.println(count);
+    public void dublicateCount(List<String> someText){
+        Set<String> uniq = new HashSet<>(someText);
+        System.out.println((someText.size() - uniq.size()));
     }
+
+
+
+
 }
